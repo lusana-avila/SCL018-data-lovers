@@ -1,0 +1,5 @@
+#poster{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11.875em,1fr));
+
+}
