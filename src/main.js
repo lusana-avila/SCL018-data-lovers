@@ -5,11 +5,18 @@ import data from './data/ghibli/ghibli.js';
 //Accediendo a la data de las peliculas
 const films = data.films;
 
-//Accediendo a las imagenes
-const filmPosters = films.map((film) => film.poster);
+const printCard = document.getElementById("containerCard");
+const drawCard = (films) =>{
+  return `
+  <img src = "${films.poster}">
+  <h2>${films.title}</h2>
+  `
+};
+for (let i = 0; i < films.length; i++){
+  printCard.innerHTML += drawCard (films[i]);
+}
 
-console.log(filmPosters)
 
 
-//console.log(dataFilms);
+//console.log(films);
 //console.log(example, data);
