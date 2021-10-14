@@ -3,14 +3,31 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
+  <title>Studio Ghibli</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div id="root"></div>
   <header>
-
+    <img src="img/logo_ghibli.png" class= "logo">
+    <section id= "containerMenu">
+      <section id = "containerFilter">
+        <select id="filter">
+          <option value = "all" disabled selected> Director/Productor</option>
+          <option value="">Director</option>
+          <option value="">Productor</option>
+        </select>
+      </section>
+      <section id = "containerOrder">
+        <select id="order">
+          <option value = "all" disabled selected> Ordenar por:</option>
+          <option value="">De la A a la Z</option>
+          <option value="">Año de lanzamiento</option>
+          <option value="">De la Z a la A</option>
+        </select>
+      </section>
+    </section>
   </header>
   <main>
     

@@ -5,6 +5,9 @@
 }
 
 body {
+    background-image: url(./img/fondo_ponyo.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -24,4 +27,9 @@ header {
 select {
     background-color: #FFFFFF;
     
+}
+
+.containerCard {
+    display: block; 
+    padding-top: 120px;
 }
