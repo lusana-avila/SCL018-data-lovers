@@ -1,9 +1,11 @@
 // estas funciones son de ejemplo
 
-export const filterDataDirector = (data,) => {
-  return 'example';
+export const filterDataDirector = (data, selecDirector) => {
+  const filterResultado = data.filter((film) => film.director === selecDirector)
+  return filterResultado;
 };
 
-export const afilterDataProducer = (data,) => {
-  return 'OMG';
+export const afilterDataProducer = (data, selecProducer,) => { 
+  const filterResultado = data.filter((film) => film.producer === selecProducer)
+  return filterResultado;
 };
