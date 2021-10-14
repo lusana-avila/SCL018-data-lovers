@@ -10,24 +10,27 @@
 <body>
   <div id="root"></div>
   <header>
-
-  </header>
-  <main>
+    <img src="img/logo_ghibli.png" class= "logo">
     <section id= "containerMenu">
       <section id = "containerFilter">
         <select id="filter">
-          <option value=""></option>
-          <option value=""></option>
+          <option value = "all" disabled selected> Director/Producer</option>
+          <option value="">Director</option>
+          <option value="">Productor</option>
         </select>
       </section>
       <section id = "containerOrder">
-        <select id="order"></select>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+        <select id="order">
+          <option value = "all" disabled selected> Ordenar por:</option>
+          <option value="">De la A a la Z</option>
+          <option value="">Año de lanzamiento</option>
+          <option value="">De la Z a la A</option>
+        </select>
       </section>
     </section>
-    <section id = "containerCard"></section>
+  </header>
+  <main>
+    <section id = "containerFilms"></section>
     <section id = "containerCardPeople" ></section>
     <SEction id = "containerCardLocations"></SEction>
     <section id = "containerCardVehicles"></section>

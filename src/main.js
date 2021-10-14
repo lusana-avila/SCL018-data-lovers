@@ -6,11 +6,13 @@ import data from './data/ghibli/ghibli.js';
 const films = data.films;
 
 //Creando cartas
-const printCard = document.getElementById("containerCard");
+const printCard = document.getElementById("containerFilms");
 const drawCard = (films) =>{
   return `
+  <section class = "containerCard">
   <img src = "${films.poster}">
   <h2>${films.title}</h2>
+  </section>
   `
 };
 for (let i = 0; i < films.length; i++){
