@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+}
+
+header {
+    background-color: #141E77;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    height: 50px;
+    width: 80px;
+}
+
+select {
+    background-color: #FFFFFF;
+    
+}
