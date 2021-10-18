@@ -5,7 +5,7 @@ export const filterDataDirector = (data, selecDirector) => {
   return filterResultado;
 };
 
-export const afilterDataProducer = (data, selecProducer,) => { 
+export const filterDataProducer = (data, selecProducer,) => { 
   const filterResultado = data.filter((film) => film.producer === selecProducer)
   return filterResultado;
 };
