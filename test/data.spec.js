@@ -1,4 +1,4 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterDataDirector, filterDataProducer } from '../src/data.js';
 
 
 describe('example', () => {
