@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<html>
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>Studio Ghibli</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-
-<body>
-  <div id="root"></div>
-  <header>
-    <section class="containerHeader" >
-      <section class="containerLogo">
-        <figure>
-        <img src="img/logo_ghibli.png" class="logo">
-      </figure>
-    </section>
-
-    <section class="container-menu" id="containerMenu">
-      <section id="containerFilter">
-        <select class="filter-director" id="filter">
-          <option value="all" disabled selected> Director</option>
-          <option value="Gorō Miyazaki">Gorō Miyazaki</option>
-          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-          <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
-          <option value="Hiroyuki Morita">Hiroyuki Morita</option>
-          <option value="Isao Takahata">Isao Takahata</option>
 * {
     margin: 0;
     box-sizing: border-box;
