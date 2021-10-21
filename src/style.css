@@ -28,14 +28,12 @@ header {
     height: 90px;
     width: 140px;
     margin-left: 20px;
-
 }
 
 .container-menu {
 display: flex;
 align-items: center;
 margin-right: 20px;
-
 }
 
 select {
@@ -57,7 +55,6 @@ select {
 .containerCard {
     position: relative;
     margin: 1%;
-    /*align-items: center;*/
     display: flex;
     flex-direction: column;
     color: white;
