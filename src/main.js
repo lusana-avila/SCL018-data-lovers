@@ -1,4 +1,4 @@
-import {filterDataDirector,filterDataProducer} from './data.js';
+import {filterDataDirector,filterDataProducer,sortData } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -26,9 +26,9 @@ for (let i = 0; i < films.length; i++){
 const selectDirector = document.getElementById("filterDirector");
 //Pasando argumentos a funcion filterDataDirector
 const filterDirector = () => { 
-  const OptionDirector = selectDirector.value;
+  const optionDirector = selectDirector.value;
   printCard.innerHTML = 0;
-  const selectOptionDirector = filterDataDirector(films,OptionDirector);
+  const selectOptionDirector = filterDataDirector(films,optionDirector);
   for (let i = 0; i < selectOptionDirector.length; i++){
     printCard.innerHTML += drawCard (selectOptionDirector[i]);
   }
@@ -41,9 +41,9 @@ selectDirector.addEventListener("change", filterDirector);
 const selectProducer = document.getElementById("filterProducer");
 //Pasando argumentos a funcion filterDataProducer
 const filterProducer = () => { 
-  const OptionProducer = selectProducer.value;
+  const optionProducer = selectProducer.value;
   printCard.innerHTML = 0;
-  const selectOptionProducer = filterDataProducer(films,OptionProducer);
+  const selectOptionProducer = filterDataProducer(films,optionProducer);
   for (let i = 0; i < selectOptionProducer.length; i++){
     printCard.innerHTML += drawCard (selectOptionProducer[i]);
   }
@@ -51,7 +51,33 @@ const filterProducer = () => {
 //Generando evento que cambiara el total de cartas por las cartas filtradas por producer
 selectProducer.addEventListener("change", filterProducer);
 
+//llamando al elemento select que contiene las opciones para ordenar 
+const selectOrder = document.getElementById("order");
+//Pasando argumentos a funcion sortData para que ordene por title
+const selectOrderTitle = () => {
+  const dataMovie =  films;
+  const dataTitle = "title";
+  const optionOrderTitle = selectOrder.value;
+  printCard.innerHTML = 0;
+  const selectOptionOrderTitle = sortData(dataMovie, dataTitle, optionOrderTitle,)
+  for (let i = 0; i < selectOptionOrderTitle.length; i++){
+    printCard.innerHTML += drawCard (selectOptionOrderTitle[i]);
+  }
+};
+//Generando evento que cambiara el orden actual de las cartas por el orden seleccionado por el usuario
+selectOrder.addEventListener("change", selectOrderTitle);
 
-
-
-//console.log(example, data);
+//Pasando argumentos a funcion sortData para que ordene por año
+const selectOrderDate = () => {
+  const dataMovie =  films;
+  const dataDate = "release_date";
+  const optionOrderDate = selectOrder.value;
+  printCard.innerHTML = 0;
+  const selectOptionOrderDate = sortData(dataMovie, dataDate, optionOrderDate,)
+  for (let i = 0; i < selectOptionOrderDate.length; i++){
+    printCard.innerHTML += drawCard (selectOptionOrderDate[i]);
+  }
+};
+//Generando evento que cambiara el orden actual de las cartas por el orden seleccionado por el usuario
+selectOrder.addEventListener("change", selectOrderDate);
+//hola
