@@ -3,12 +3,13 @@ import {filterDataDirector,filterDataProducer,sortData } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 //Accediendo a la data de las peliculas
-const films = data.films;
+let films = data.films;
+let newMovies = films;
 //Creando cartas
 const printCard = document.getElementById("containerFilms");
 const drawCard = (films) =>{
   return `
-  <section class = "containerCard">
+  <section class = "containerCard" id="${films.id}">
     <section class = "containerPoster">
       <img src = "${films.poster}">
     </section>
@@ -18,66 +19,84 @@ const drawCard = (films) =>{
   </section>
   `
 };
-for (let i = 0; i < films.length; i++){
-  printCard.innerHTML += drawCard (films[i]);
-}
+const forFuction = (newMovie)=>{
+  printCard.innerHTML = "";
+  newMovie.forEach((newFilm)=>{
+    printCard.innerHTML += drawCard(newFilm);
+  })
+};
+forFuction(newMovies);
 
 //Llamando al elemento select que contiene las opciones de director
 const selectDirector = document.getElementById("filterDirector");
-//Pasando argumentos a funcion filterDataDirector
-const filterDirector = () => { 
-  const optionDirector = selectDirector.value;
-  printCard.innerHTML = 0;
-  const selectOptionDirector = filterDataDirector(films,optionDirector);
-  for (let i = 0; i < selectOptionDirector.length; i++){
-    printCard.innerHTML += drawCard (selectOptionDirector[i]);
-  }
-};
-//Generando evento que cambiara el total de cartas por las cartas filtradas por director
-selectDirector.addEventListener("change", filterDirector);
-
+selectDirector.addEventListener("change", (event)=>{
+  const selectedDirector = filterDataDirector(films, event.target.value);
+  newMovies = selectedDirector;
+  forFuction(selectedDirector);
+  addEvents();
+});
 
 //Llamando al elemento select que contiene las opciones de producer
 const selectProducer = document.getElementById("filterProducer");
-//Pasando argumentos a funcion filterDataProducer
-const filterProducer = () => { 
-  const optionProducer = selectProducer.value;
-  printCard.innerHTML = 0;
-  const selectOptionProducer = filterDataProducer(films,optionProducer);
-  for (let i = 0; i < selectOptionProducer.length; i++){
-    printCard.innerHTML += drawCard (selectOptionProducer[i]);
-  }
-};
-//Generando evento que cambiara el total de cartas por las cartas filtradas por producer
-selectProducer.addEventListener("change", filterProducer);
+selectProducer.addEventListener("change", (event)=>{
+  const selectedProducer = filterDataProducer(films, event.target.value);
+  newMovies = selectedProducer;
+  forFuction(selectedProducer);
+  addEvents();
+});
 
 //llamando al elemento select que contiene las opciones para ordenar 
-const selectOrder = document.getElementById("order");
-//Pasando argumentos a funcion sortData para que ordene por title
-const selectOrderTitle = () => {
-  const dataMovie =  films;
-  const dataTitle = "title";
-  const optionOrderTitle = selectOrder.value;
-  printCard.innerHTML = 0;
-  const selectOptionOrderTitle = sortData(dataMovie, dataTitle, optionOrderTitle,)
-  for (let i = 0; i < selectOptionOrderTitle.length; i++){
-    printCard.innerHTML += drawCard (selectOptionOrderTitle[i]);
-  }
-};
-//Generando evento que cambiara el orden actual de las cartas por el orden seleccionado por el usuario
-selectOrder.addEventListener("change", selectOrderTitle);
+const selectOrder = document.querySelector("#containerOrder");
+selectOrder.addEventListener("change", (event)=>{
+  const selectedOrderTitle = sortData(films, event.target.value, event.target.value);
+  newMovies = selectedOrderTitle;
+  forFuction(selectedOrderTitle);
+  addEvents();
+});
 
-//Pasando argumentos a funcion sortData para que ordene por año
-const selectOrderDate = () => {
-  const dataMovie =  films;
-  const dataDate = "release_date";
-  const optionOrderDate = selectOrder.value;
-  printCard.innerHTML = 0;
-  const selectOptionOrderDate = sortData(dataMovie, dataDate, optionOrderDate,)
-  for (let i = 0; i < selectOptionOrderDate.length; i++){
-    printCard.innerHTML += drawCard (selectOptionOrderDate[i]);
-  }
+//Llamando al boton que te lleva al inicio
+const btHome = document.getElementById("btHome");
+btHome.addEventListener("click", function (){
+  location.reload();
+});
+
+//Llamando al container que contendra la informacion de la segunda pagina
+const printDescription = document.getElementById("containerDescription");
+//Creando funcion que muestra el contenido de la segunda pagina 
+const drawDescription = (films) =>{
+  return`
+  <section id="${films.id}">
+  <section class = "containerPoster2">
+      <img src = "${films.poster}">
+  </section>
+    <h1>${films.title}</h1>
+    <h3>Score: ${films.rt_score}/100</h3>
+    <P>${films.description}</P>
+    <h3>Release Date: ${films.release_date}</h3>
+    <h3>Director: ${films.director}</h3>
+    <h3>Producer: ${films.producer}</h3>
+  </section>
+  `
 };
-//Generando evento que cambiara el orden actual de las cartas por el orden seleccionado por el usuario
-selectOrder.addEventListener("change", selectOrderDate);
-//hola
+
+//Llamando al containerMenu
+const menu = document.getElementById("containerMenu");
+const addEvents = () =>{
+//Llamamos a nuestro containerCard y lo guardamos en una variable
+  const buttonFilms = document.querySelectorAll(".containerCard");
+//Creamos una funcion que imprimira el contenido de nuestra segunda pagina 
+  function buttonfilmsDescription (id) {
+    menu.style.display = "none";
+    printCard.style.display = "none";
+    const selectedFilm = films.filter(element => element.id === id);
+    printDescription.innerHTML += drawDescription(selectedFilm[0])
+  }
+//Generamos el evento para mostrar el contenido de la segunda pagina
+  buttonFilms.forEach((element)=> {
+    const id = element.getAttribute("id");
+    element.addEventListener("click",function(){
+    buttonfilmsDescription(id)
+    },false)
+  });
+};
+addEvents()

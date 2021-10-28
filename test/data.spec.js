@@ -79,43 +79,5 @@ describe('sortData', () => {
   ]
   expect(sortData(data, 'title', 'titleDesc')).toEqual(result); 
   });
-
-  it('should sort the result from newest to oldest',() => {
-    const data = [
-      {release_date:'1988'},
-      {release_date:'1989'},
-      {release_date:'1986'},
-      {release_date:'1992'},
-      {release_date:'1991'},
-  ]
-    const result = [
-      {release_date:'1986'},
-      {release_date:'1988'},
-      {release_date:'1989'},
-      {release_date:'1991'},
-      {release_date:'1992'},
-      
-  ]
-  expect(sortData(data,'release_date')).toEqual(result); 
-  });
-
-  it('should sort the result from oldest to newest',() => {
-    const data = [
-      {release_date:'1988'},
-      {release_date:'1989'},
-      {release_date:'1986'},
-      {release_date:'1992'},
-      {release_date:'1991'},
-      
-  ]
-    const result = [
-      {release_date:'1992'},
-      {release_date:'1991'},
-      {release_date:'1989'},
-      {release_date:'1988'},
-      {release_date:'1986'},
-  ]
-  expect(sortData(data, 'release_date', 'releaseDateDesc')).toEqual(result); 
-  });
 });
 
