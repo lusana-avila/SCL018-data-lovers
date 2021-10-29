@@ -152,7 +152,6 @@ select:hover {
 .description-movies {
   display: flex;
   flex-direction: column;
-  /*margin-left: 2%;*/
   width: 100%;
   padding-top: 2%;
   margin-right: 2%;
