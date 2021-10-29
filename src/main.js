@@ -11,10 +11,10 @@ const drawCard = (films) =>{
   return `
   <section class = "containerCard" id="${films.id}">
     <section class = "containerPoster">
-      <img src = "${films.poster}">
+      <img src= "${films.poster}" class= "poster" >
     </section>
     <section class = "containerTitle">
-      <h2>${films.title}</h2>
+      <p>${films.title}</p>
     </section>
   </section>
   `
@@ -65,17 +65,39 @@ const printDescription = document.getElementById("containerDescription");
 //Creando funcion que muestra el contenido de la segunda pagina 
 const drawDescription = (films) =>{
   return`
-  <section id="${films.id}">
-  <section class = "containerPoster2">
-      <img src = "${films.poster}">
+  
+  <section id="${films.id}" class="container-description-movies">
+  <section class="container-inner">
+    <section class="poster2">
+      <img src="${films.poster}" class="">
+    </section>
+
+  <section class="description-movies">
+    <article class="movies">
+      <h1 class="title-movie">${films.title}</h1>
+    </article>
+    <article class="description">
+      <P class="description-text"> ${films.description}</P>
+    </article>
+    <article class="score">
+      <h3 class="title">Score: </h3>
+      <h3 class="subtitle"> ${'\u00A0'+ films.rt_score}/100</h3>
+    </article>
+    <article class="date">
+      <h3 class="title">Release Date: </h3>
+      <h3 class="subtitle">${'\u00A0'+ films.release_date}</h3>
+    </article>
+    <article class="director">
+      <h3 class="title">Director: </h3>
+      <h3 class="subtitle">${'\u00A0'+ films.director}</h3>
+    </article>
+    <article class="producer">
+      <h3 class="title">Producer: </h3>
+      <h3 class="subtitle">${'\u00A0'+ films.producer}</h3>
+    </article>
   </section>
-    <h1>${films.title}</h1>
-    <h3>Score: ${films.rt_score}/100</h3>
-    <P>${films.description}</P>
-    <h3>Release Date: ${films.release_date}</h3>
-    <h3>Director: ${films.director}</h3>
-    <h3>Producer: ${films.producer}</h3>
   </section>
+</section>
   `
 };
 
