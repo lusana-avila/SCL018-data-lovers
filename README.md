@@ -9,7 +9,7 @@
 * [5. Resultado Final](#5-Resultado-Final)
 * [6. Link del sitio](#6-Link-del-sitio)
 
-***
+****
 
 ## 1. Studio Ghibli
 
