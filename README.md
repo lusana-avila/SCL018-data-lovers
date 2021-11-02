@@ -21,10 +21,19 @@ Inspiradas en el maravilloso mundo de Studio Ghibli desarrollamos un sitio web o
 
 Este proyecto esta basado en la manipulación de data proporcionada por el equipo de Laboratoria, cuyo challenge es visualizar, filtrar, ordenar y mostrar información sobre las peliculas de studio ghibli.
 
-## 3. Historias de usuario
+## 3. Usuario
 
 ### Identificando a nuestra/o usuario
-Para poder conocer nuestra/o usuaria/o son personas entre 
+Para poder conocer nuestra/o usuaria/o realizamos una encuesta que fue respondida por al rededor de 150 personas donde pudimos definir las caracteristicas de nuestro/a usuario/a que son las siguientes:
+
+* Se identifican como hombres y mujeres
+* Tienen entre 26 y 42 años
+* En su mayoría no se identifican como fanaticos de pero han visto varias peliculas y a todos les gustaría saber más sobre Studio Ghibli, sobretodo sobre las peliculas y los personajes.
+* Los colores que se les vienen a la mente son verde, azul y tonos pasteles asociados a elementos de la naturaleza.
+* Valoran información clara y que entregue instrucciones.
+* Consideran información relevante: Nombre de las peliculas, Descripcion de las peliculas, Identificar director, productor y año de lanzamiento, Ranking de puntuación. 
+
+Una vez identificado nuestro usuario desarrollamos las historias de usuario.
 
 #### Historia de Usuario 1
  "Yo como usuaria/o que disfruto ver series y películas quiero conocer más sobre el Studio Ghibli, para saber que películas han producido"
@@ -39,6 +48,10 @@ Para poder conocer nuestra/o usuaria/o son personas entre
 ## 4. Prototipos
 
 ### Prototipos de baja fideladidad
+
+<img src= src/img/prototipo_baja_01.png width=500px height=400px> 
+
+<img src= src/img/prototipo_baja_02.png width=500px height=400px> 
 
 ### Prototipos de alta fideladidad
 
