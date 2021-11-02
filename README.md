@@ -55,7 +55,15 @@ Una vez identificado nuestro usuario desarrollamos las historias de usuario.
 
 ### Prototipos de alta fideladidad
 
+<img src= src/img/prototipo_alta_01.png width=500px height=400px> 
+
+<img src= src/img/prototipo_alta_02.png width=500px height=400px> 
+
 ## 5. Resultado final
+
+<img src= src/img/resultado_final_01.png width=500px height=400px> 
+
+<img src= src/img/resultado_final_01.png width=500px height=400px> 
 
 ## 6. Link del sitio 
 
